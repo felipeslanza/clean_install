@@ -16,19 +16,18 @@ Remap CAPSLOCK -> ESC (optional):
 	- go to: Tweaks -> Keyboard -> Advanced -> Second ESC
 
 
-## Run install script
+## Install
+
+Run install script and add config files to user's home:
 
 ````shell
-./install.sh
+sudo chmod +x setup.sh
+./setup.sh
 ````
 
-## Copy config files
-````shell
-mv .zshrc .vimrc ~
-````
+## Issues
 
-
-
+Shortcut `Ctrl + Shift + e` not splitting window in terminator. See https://askubuntu.com/questions/1125726/how-to-disable-ctrl-shift-e-keybinding-from-showing-eeeee-and-loading-emoji-opti.
 
 
 
