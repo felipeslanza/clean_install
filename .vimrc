@@ -179,6 +179,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'psf/black'
 
 " JavaScript
+Plugin 'alvan/vim-closetag'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'prettier/vim-prettier', {
@@ -227,6 +228,20 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-line-length=90 --ignore=F403,F405,F821,E203,W503"
 let python_highlight_all=1
 syntax on
+
+" Closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,javascript'
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
