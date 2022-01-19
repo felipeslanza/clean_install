@@ -1,36 +1,27 @@
 # [clean_install]
 
-Scripts, config files and instructions for a clean Debian install
+Simple setup script for a clean Debian install.
 
-## Unscriptable steps
+## Manual steps
 
-Install git and clone installer:
-````shell
-su
+1. Install git and clone installer:
+```shell
 apt install git
-cd ~ && mkdir code && cd code
 git clone git@github.com:felipeslanza/clean_install.git
-````
+```
 
-Remap CAPSLOCK -> ESC (optional):
-	- go to: Tweaks -> Keyboard -> Advanced -> Second ESC
+2. Remap Capslock to Escape (optional):
+	* Tweaks -> Keyboard -> Advanced -> Second ESC
 
 
 ## Install
 
-Run install script and add config files to user's home:
+Run setup script:
 
-````shell
-sudo chmod +x setup.sh
+```shell
 ./setup.sh
-````
+```
 
 ## Issues
 
-Shortcut `Ctrl + Shift + e` not splitting window in terminator. See https://askubuntu.com/questions/1125726/how-to-disable-ctrl-shift-e-keybinding-from-showing-eeeee-and-loading-emoji-opti.
-
-
-
-
-
-
+* Shortcut `Ctrl + Shift + e` not splitting window in terminator. See [here](https://askubuntu.com/questions/1125726/how-to-disable-ctrl-shift-e-keybinding-from-showing-eeeee-and-loading-emoji-opt).

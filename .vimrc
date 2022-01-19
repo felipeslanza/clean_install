@@ -85,6 +85,9 @@ set ttimeoutlen=5
 setlocal foldmethod=indent
 set nofoldenable
 
+"more powerful backspacing
+set backspace=indent,eol,start  
+
 " ==============================================================
 " Bindings
 " ==============================================================
@@ -138,6 +141,9 @@ nmap <C-n> :NERDTreeToggle<CR>
 nnoremap <F9> :Black<CR>
 nnoremap <leader>t :CtrlPBufTag<CR>
 
+" Vimwiki
+" nmap <leader><Space> <Plug>VimwikiToggleListItem
+
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
@@ -172,6 +178,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'preservim/nerdcommenter'
+Plugin 'vimwiki/vimwiki'
 
 " Python
 Plugin 'nvie/vim-flake8'
@@ -195,6 +202,18 @@ filetype plugin indent on    " required
 " ============
 " Disable comments on new lines
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" C and C++
+" ------
+au BufNewFile,BufRead *.c,*.cpp,*.cc,*.h,*.hh
+    \ set tabstop=4        |
+    \ set softtabstop=4    |
+    \ set shiftwidth=4     |
+    \ set textwidth=80     |
+    \ set expandtab        |
+    \ set autoindent       |
+    \ set fileformat=unix  |
+
 
 " Python
 " ------
@@ -223,6 +242,14 @@ autocmd Filetype json
   \ au! |
   \ let g:indentLine_setConceal = 0 |
   \ let g:vim_json_syntax_conceal = 0
+
+
+" Vimwiki
+au BufNewFile ~/vimwiki/*.wiki
+      \ call append(0, [
+      \ "== " . split(expand('%:r'),'/')[-1] . " ==",
+      \ ])
+
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-line-length=90 --ignore=F403,F405,F821,E203,W503"

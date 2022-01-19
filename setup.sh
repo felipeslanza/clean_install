@@ -15,7 +15,6 @@ echo "---> Installing dependencies and setting up repos"
 apt install -y curl wget make git vim gnupg2 xclip
 
 # Custom repos
-add-apt-repository ppa:deadsnakes/ppa  # python versions
 add-apt-repository ppa:mattrose/terminator
 
 # MongoDB (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/)
@@ -31,7 +30,6 @@ echo "---> Installing main packages"
 # Update and install all `apt` packages
 apt update -y && apt upgrade -y
 apt install -y openssl libssl-dev ctags vim-gtk3 rsync build-essential xdotool
-apt install -y python3.7-dev python3.9-dev  # Add/change versions as desired
 apt install -y sqlite3 terminator mongodb-org
 
 # Install Oh-my-zsh (https://ohmyz.sh/#install)
