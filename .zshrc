@@ -149,7 +149,6 @@ alias xclip='xclip -selection c'
 # Python
 alias av='source venv/bin/activate'
 alias dv='deactivate'
-alias python="python3.7"  # (!) Check version
 alias ip='ipython -i'
 alias ipd='PYTHONBREAKPOINT=0 ipython -i'
 alias pd='PYTHONBREAKPOINT=0 ipython'
@@ -159,8 +158,6 @@ alias cprof='ipython -m cProfile -- -s cumtime'
 alias .3='cd ....'
 alias .4='cd .....'
 alias .5='cd ......'
-alias gdrive='cd ~/google-drive'
-alias personal='cd ~/code/personal'
 
 # Git
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
@@ -183,7 +180,6 @@ alias ippub="curl -fs ipinfo.io | grep '\"ip\"' | awk '{print \$2}' | tr -d '\"|
 # ==================
 export VISUAL=vi
 export EDITOR="$VISUAL"
-export PYTHONPATH="${PYTHONPATH}:/home/$(whoami)/code/vorp_internal"
 
 # Convenience
 export TODAY=$(date +%Y%m%d)
